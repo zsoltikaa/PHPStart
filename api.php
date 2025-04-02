@@ -3,6 +3,9 @@
     // a valasz tipusa JSON lesz, a karakter kodja utf-8
     header('Content-Type: application/json; charset-utf-8');
 
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Headers: *");
+
     // adatbazis kapcsolat behuzasa
     require 'connect.php';
     // include 'connect.php' engedi betolteni az oldalt, a require nem
@@ -12,7 +15,7 @@
 
     // vegrehajtjuk a lekerdezest
     $result = mysqli_query($conn, $sql);
-    var_dump($result);
+    // var_dump($result);
 
     // letrehozunk egy tombot az adatok tarolasara
     $data = [];
